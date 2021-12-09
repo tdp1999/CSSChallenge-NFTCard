@@ -1,33 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            font-size: 16px;
+        }
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | NFT preview card component</title>
+        body {
+            height: 100vh;
+            font-family: 'Outfit', sans-serif;
+        }
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+        .custom-container {
+            background: hsl(217, 54%, 11%);
+        }
+
+        .custom-card {
+            background: hsl(216, 50%, 16%);
+            color: hsl(215, 51%, 70%);
+            max-width: 335px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        }
+
+		.custom-main-image {
+			backface-visibility: hidden;
+		}
+
+        .custom-title:hover, a:hover {
+            color: hsl(178, 100%, 50%);
+        }
+
+		.custom-backdrop {
+			background-color: rgba(0, 255, 247, 0.3)
+		}
+
+        .custom-price {
+            color: hsl(178, 100%, 50%);
+        }
+
+        .divider {
+            background: hsl(215, 32%, 27%);
+        }
+    </style>
+
+    <title>NFT preview card component</title>
 </head>
 <body>
-
-  Equilibrium #3429
-
-  Our Equilibrium collection promotes balance and calm.
-
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<div class="flex justify-center items-center h-full custom-container">
+    <div class="custom-card flex-col p-5 mx-2 rounded-2xl">
+        <a href="#">
+            <div class="custom-backdrop-container relative">
+                <img src="images/image-equilibrium.jpg" alt="" class="w-full rounded-2xl mb-5 custom-main-image opacity-100">
+                <div class="opacity-0 hover:opacity-100 absolute inset-0 w-full h-full flex items-center justify-center custom-backdrop rounded-2xl rounded-2xl transition-opacity duration-300 ease-in-out">
+					<img src="images/icon-view.svg" alt="">
+				</div>
+            </div>
+        </a>
+        <h2 class="font-bold mb-4 text-white text-xl cursor-pointer inline-block custom-title">Equilibrium #3429</h2>
+        <div class="mb-4 font-light custom-desc text-lg">Our Equilibrium collection promotes balance and calm.</div>
+        <div class="flex justify-between mb-4">
+            <div class="custom-price flex items-center font-semibold">
+                <img src="images/icon-ethereum.svg" alt="" class="h-4 object-contain mr-2">
+                <span>0.041 ETH</span>
+            </div>
+            <div class="custom-date flex">
+                <img src="images/icon-clock.svg" alt="" class="w-4 object-contain mr-2">
+                <span>3 days left</span>
+            </div>
+        </div>
+        <div class="divider h-px w-full mb-4"></div>
+        <div class="flex items-center">
+            <img src="images/image-avatar.png" alt="" class="w-8 h-8 border-2 rounded-full mr-3">
+            <div>Creation of <a href="#" class="text-white">Junes Wyvern</a></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
